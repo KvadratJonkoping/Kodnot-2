@@ -6,20 +6,20 @@ Du är med och arrangerar en slalomtävling. Efter att alla åkt sina tävlingå
 kommer tävlingsgeneralen och säger: 
 - Då tar du och tar fram resultatlistan i lagtävlingen.
 - Ok, hur gör jag det? frågar du.
-- Ta de tre snabbaste tiderna för åkare från samma klub. Minst en tjej och minst
-  en kill. Dom tillsammans bildar ett lag. Deras totala åktid blir lagets åktid.
+- Ta de tre snabbaste tiderna för åkare från samma klubb. Minst en tjej och minst
+  en kille. Dom tillsammans bildar ett lag. Deras totala åktid blir lagets åktid.
   Lätt som en plätt!
 
 ## Uppgiften
 
 Räkna ut resultatet i lagtävlingen utifrån csv filen.
 
-Ett lag definieras som tre åkare från samma klub där det måste vara antingen
-två tjejer och en kill eller två killar och en tjej i laget.
+Ett lag definieras som tre åkare från samma klubb där det måste vara antingen
+två tjejer och en kille eller två killar och en tjej i laget.
 
 Ett lags tid är summan av lagets deltagares summerade tider.
 
-En klub kan ha flera lag.
+En klubb kan ha flera lag.
 
 När du har ett resultat, skapa en pull-request till detta repository innehållandes 
 en mapp som motsvarar ditt användarnamn här på github. 
