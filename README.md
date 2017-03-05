@@ -30,6 +30,8 @@ programmet exekveras. Det ska även finnas en resultatlista där det går att l�
 ut vilka åkare som tillhör vilket lag och vilken klubb laget representerar samt
 lagets totala tid.
 
+Glöm inte att skriva hur man använder ditt program i `README` filen.
+
 ## Katalogstruktur
     .
 
