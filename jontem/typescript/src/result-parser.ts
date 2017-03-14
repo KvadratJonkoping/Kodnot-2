@@ -1,12 +1,5 @@
 import * as fs from "fs";
-
-export interface Participant {
-    place: number,
-    gender: "male" | "female",
-    name: string,
-    team: string,
-    time: number
-}
+import { Participant } from "./types";
 
 export function parseParticipants(fileName: string): Array<Participant> {
 

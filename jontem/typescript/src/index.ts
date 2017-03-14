@@ -1,5 +1,7 @@
-import { Participant, parseParticipants } from "./result-parser";
+import { Participant } from "./types";
+import { parseParticipants } from "./result-parser";
 import { createTimeTeams, filterValidTimeTeams } from "./time-teams";
+import { formatTime, sumTime } from "./time";
 
 function groupByClub(participants: Array<Participant>) {
     return participants.reduce((soFar, current) => {
@@ -7,17 +9,6 @@ function groupByClub(participants: Array<Participant>) {
             ? { ...soFar, [current.team]: soFar[current.team].concat(current) }
             : { ...soFar, [current.team]: [current] };
     }, {});
-}
-
-function sum(teamMembers: Array<Participant>) {
-    return teamMembers.reduce((soFar, current) => (soFar + current.time), 0);
-}
-
-function formatTime(numerical: number): string {
-    const minutes = Math.floor(numerical / 60);
-    const remaining = parseInt(Math.round(numerical % 60 * 100).toString()) / 100; // Round remaining part with 2 decimals. The JavaScript way :)
-
-    return `${minutes}min ${remaining}sec`;
 }
 
 const participants: Array<Participant> = parseParticipants("../../resultat.csv")
@@ -41,6 +32,6 @@ for (const clubKey of Object.keys(result)) {
     const club = result[clubKey];
     console.log(`-------- ${clubKey} ---------`);
     console.log(club);
-    console.log(`clubtime: ${formatTime(sum(club))}`);
+    console.log(`clubtime: ${formatTime(sumTime(club))}`);
     console.log(`-------- end ---------`);
 }

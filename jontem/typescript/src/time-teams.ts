@@ -1,4 +1,4 @@
-import { Participant } from "./result-parser";
+import { Participant } from "./types";
 
 export function createTimeTeams(
     remainingMembers: Array<Participant>,
