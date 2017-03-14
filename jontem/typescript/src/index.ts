@@ -16,22 +16,27 @@ const participants: Array<Participant> = parseParticipants("../../resultat.csv")
 
 const participantByClub = groupByClub(participants);
 
-const result: { [teamId: string]: Array<Participant> } = Object.keys(participantByClub).reduce((soFar, currentClub) => {
+const result: { [teamId: string]: { members: Array<Participant>, totalTime: string } } = Object.keys(participantByClub).reduce((soFar, currentClub) => {
     const timeTeams = createTimeTeams(participantByClub[currentClub]);
     const validTeams = filterValidTimeTeams(timeTeams);
+
     return Object.keys(validTeams)
         .reduce((soFar, currentTeam) => {
             return {
                 ...soFar,
-                [`${currentClub}-${currentTeam}`]: validTeams[currentTeam]
+                [`${currentClub}-${currentTeam}`]: {
+                    members: validTeams[currentTeam],
+                    totalTime: formatTime(sumTime(validTeams[currentTeam]))
+                }
             };
         }, soFar);
-}, {});
+}, {})
+
 
 for (const clubKey of Object.keys(result)) {
     const club = result[clubKey];
     console.log(`-------- ${clubKey} ---------`);
-    console.log(club);
-    console.log(`clubtime: ${formatTime(sumTime(club))}`);
-    console.log(`-------- end ---------`);
+    console.log(`members: ${club.members.map((m) => m.name).join(", ")}`);
+    console.log(`clubtime: ${club.totalTime}`);
+    console.log();
 }

@@ -1,0 +1,11 @@
+-------- Klubb 6-team-1 ---------
+members: Wiliam Karlsson, Oskar Oskarsson, Jonna Nilsson
+clubtime: 2min 49.22sec
+
+-------- Klubb 6-team-2 ---------
+members: John Svensson, Thelma Karlsson, Maja Karlsson
+clubtime: 3min 5.89sec
+
+-------- Klubb 1-team-1 ---------
+members: Lovisa Svensson, Fredrik Andersson, Lisa Svensson
+clubtime: 2min 59.35sec
