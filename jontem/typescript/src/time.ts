@@ -6,7 +6,7 @@ export function sumTime(teamMembers: Array<Participant>) {
 
 export function formatTime(numerical: number): string {
     const minutes = Math.floor(numerical / 60);
-    const remaining = parseInt(Math.round(numerical % 60 * 100).toString()) / 100; // Round remaining part with 2 decimals. The JavaScript way :)
+    const remaining = (numerical % 60).toFixed(2);
 
     return `${minutes}min ${remaining}sec`;
 }
